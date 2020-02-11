@@ -27,4 +27,15 @@ trait WorkspaceTrait
 
     }
 
+    /**
+     * Get workspace client
+     *
+     * @return stdClass
+     */
+    public function workspaceClients()
+    {
+        return $this->sendGetMessage('https://www.toggl.com/api/v8/workspaces/' . $this->workspaceId . '/clients');
+
+    }
+
 }
