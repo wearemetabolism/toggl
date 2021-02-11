@@ -82,6 +82,19 @@ trait ProjectTrait {
     }
 
     /**
+     * Set project users
+     *
+     * @param   integer     $id         ID of the project
+     * @param   array       $data       Data payload that is to be sent with the request
+     * @return  stdClass
+     */
+    public function setProjectUsers(array $data = array())
+    {
+        return $this->sendPostMessage( 'https://www.toggl.com/api/v8/project_users', $data );
+    }
+
+
+    /**
      * Get project tasks
      *
      * @param   integer     $id         ID of the project
