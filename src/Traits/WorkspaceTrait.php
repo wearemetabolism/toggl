@@ -21,9 +21,20 @@ trait WorkspaceTrait
      *
      * @return stdClass
      */
-    public function workspaceProjects()
+    public function workspaceProjects($data=array())
     {
-        return $this->sendGetMessage('https://www.toggl.com/api/v8/workspaces/' . $this->workspaceId . '/projects');
+        return $this->sendGetMessage('https://www.toggl.com/api/v8/workspaces/' . $this->workspaceId . '/projects', $data);
+        
+    }
+
+    /**
+     * Get workspace client
+     *
+     * @return stdClass
+     */
+    public function workspaceClients()
+    {
+        return $this->sendGetMessage('https://www.toggl.com/api/v8/workspaces/' . $this->workspaceId . '/clients');
 
     }
 
